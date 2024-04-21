@@ -5,6 +5,8 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\BookReadingController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Middleware\Authorization;
 use Illuminate\Support\Facades\Route;
 
 Route::get("/register", [RegisterController::class, "index"])
@@ -25,11 +27,9 @@ Route::post('/logout', [LogoutController::class, 'store'])
 Route::get('/', [BookController::class, 'index'])
     ->name('home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})
+Route::get('/dashboard', [DashboardController::class, 'index'])
     ->name('dashboard')
-    ->middleware('auth');
+    ->middleware(Authorization::class);
 
 
 Route::post("/books/{book}/mark-as-reading", [BookReadingController::class, "store"])

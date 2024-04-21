@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Role;
+use App\Models\UserRole;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -13,7 +15,7 @@ class BookController extends Controller
         $books = Book::with('readings')->get();
 
         return view('welcome', [
-            'books' => $books
+            'books' => $books,
         ]);
     }
 }

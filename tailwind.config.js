@@ -4,9 +4,12 @@ export default {
       "./resources/**/*.blade.php",
       "./resources/**/*.js",
       "./resources/**/*.vue",
+      "./resources/views/vendor/pagination/*.blade.php",
     ],
+    darkMode: true,
     theme: {
       extend: {},
     },
-    plugins: [],
+    plugins: [
+    ],
   }
