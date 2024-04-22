@@ -71,11 +71,11 @@
             {{ $books->links()}}
         </div>
         <button id="booksExportDialogBtn" class="bg-green-500 text-white my-4 p-2 rounded-md">Export as JSON</button>
-        <dialog id="booksExportConfirmDialog" class="rounded-lg p-5 bg-white shadow-xl">
+        <dialog id="booksExportDialog" class="rounded-lg p-5 bg-white shadow-xl">
             <h2 class="text-xl font-semibold">Export as JSON</h2>
             <p class="mt-2">This will pull all data from <code>books</code> table and export it as a JSON</p>
             <form method="dialog" class="mt-4 flex justify-end space-x-2">
-                <button type="button" value="cancel" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 transition duration-300">
+                <button id="books_export_btn" type="button" value="cancel" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 transition duration-300">
                     Cancel
                 </button>
                 <a class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition duration-300" href="/export-books/json" onclick="exportTasks(event.target);">
@@ -115,7 +115,7 @@
             <h2 class="text-xl font-semibold">Export as JSON</h2>
             <p class="mt-2">This will pull all data from <code>users</code> table and export it as a JSON</p>
             <form method="dialog" class="mt-4 flex justify-end space-x-2">
-                <button type="button" value="cancel" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 transition duration-300">
+                <button id="users_export_btn" type="button" value="cancel" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 transition duration-300">
                     Cancel
                 </button>
                 <a class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition duration-300" href="/export-users/json" onclick="exportTasks(event.target);">
@@ -128,7 +128,7 @@
 </div>
 <script>
     // Get the dialog element and the button elements
-    const booksExportDialog = document.getElementById('booksExportConfirmDialog');
+    const booksExportDialog = document.getElementById('booksExportDialog');
     const booksExportDialogBtn = document.getElementById('booksExportDialogBtn');
 
     // Event listener to open the dialog
@@ -136,7 +136,7 @@
         booksExportDialog.showModal(); // Use showModal() to make it modal
     });
 
-    document.querySelector('button[value="cancel"]').addEventListener('click', () => {
+    document.getElementById('books_export_btn').addEventListener('click', () => {
         booksExportDialog.close();
     });
 
@@ -154,7 +154,7 @@
         userExportDialog.showModal(); // Use showModal() to make it modal
     });
 
-    document.querySelector('button[value="cancel"]').addEventListener('click', () => {
+    document.getElementById('users_export_btn').addEventListener('click', () => {
         userExportDialog.close();
     });
 
