@@ -25,11 +25,15 @@ Route::post('/logout', [LogoutController::class, 'store'])
     ->name('logout')
     ->middleware('auth');
 
+Route::get('/logout', [LogoutController::class, 'index'])
+    ->name('logout-page')
+    ->middleware('auth');
+
 Route::get('/', [BookController::class, 'index'])
     ->name('home');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])
-    ->name('dashboard')
+Route::get('/admin', [DashboardController::class, 'index'])
+    ->name('admin')
     ->middleware(Authorization::class);
 
 

@@ -18,7 +18,7 @@
             <div class="flex divide-x divide-slate-500">
                 <ul class="flex justify-between items-center">
                     @if (auth()->check() && auth()->user()->isAdmin())
-                    <a href="/dashboard" class="px-3 py-2 rounded hover:bg-gray-700">Dashboard</a>
+                    <a href="/admin" class="px-3 py-2 rounded hover:bg-gray-700">Dashboard</a>
                     @endif
                     <a href="/" class="px-3 py-2 rounded hover:bg-gray-700">Home</a>
                 </ul>

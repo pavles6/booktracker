@@ -14,7 +14,7 @@ class DashboardController extends Controller
         $user_count = User::count();
         $reading_count = Reading::count();
 
-        return view('dashboard', [
+        return view('admin', [
             'book_count' => $book_count,
             'user_count' => $user_count,
             'reading_count' => $reading_count,
