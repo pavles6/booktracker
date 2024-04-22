@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex justify-center">
-    <div class="w-fit bg-white p-6 rounded-lg grid grid-cols-3 gap-4">
+<div class="flex flex-col bg-white p-6 rounded-lg">
+    <div class="w-fit grid grid-cols-4 gap-4">
         @foreach ($books as $book)
         <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white m-4">
             <div class="px-6 py-4">
@@ -40,6 +40,9 @@
             </div>
         </div>
         @endforeach
+    </div>
+    <div class="">
+        {{ $books->links()}}
     </div>
 </div>
 @endsection
