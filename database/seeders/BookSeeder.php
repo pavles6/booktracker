@@ -27,6 +27,7 @@ class BookSeeder extends Seeder
                 "author" => $data[1],
                 "isbn" => $data[2],
                 "publishing_year" => $data[3],
+                "genre" => $data[4],
                 "created_at" => now(),
                 "updated_at" => now(),
             ]);

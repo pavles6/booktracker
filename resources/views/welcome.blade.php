@@ -11,7 +11,10 @@
                     Author: <strong>{{ $book->author }}</strong>
                 </p>
                 <p class="text-gray-700 text-base">
-                    Year: <strong>{{ $book->year }}</strong>
+                    Year: <strong>{{ $book->publishing_year }}</strong>
+                </p>
+                <p class="text-gray-700 text-base">
+                    Genre: <strong>{{ $book->genre }}</strong>
                 </p>
                 <p class="text-gray-700 text-base">
                     ISBN: <strong>{{ $book->isbn }}</strong>

@@ -45,4 +45,6 @@ Route::post("/books/{book}/unmark-as-reading", [BookReadingController::class, "d
     ->name("books.unmark-as-reading")
     ->middleware("auth");
 
-Route::get('/export-json', [JSONExportController::class, 'export'])->name('export.json');
+Route::get('/export-books/json', [JSONExportController::class, 'exportBooks'])->name('export-books.json');
+
+Route::get('/export-users/json', [JSONExportController::class, 'exportUsers'])->name('export-users.json');
